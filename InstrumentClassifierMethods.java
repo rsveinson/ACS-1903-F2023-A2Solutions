@@ -21,12 +21,17 @@ public class InstrumentClassifierMethods{
                 String key = lookUpKey(keyCode);
                 // create output String
                 output = createInfoText(instrument, grade, key);
-
-            } else output = "Not a Yamaha instrument";
+            }// end is a Yamaha
+            else 
+                output = "Not a Yamaha instrument";
+    
+            // show the instument info and get the quit/continue response
             response = JOptionPane.showInputDialog(output + "\n\nEnter another number? yes/no");            
         } while(response.equals("yes"));
+        
+        // program terminates in the regular manner
         JOptionPane.showMessageDialog(null, "Goodbye!");
-    }
+    }// end of main
 
     public static String lookUpInstrument(String typeCode){       
         String instrument;
@@ -46,18 +51,18 @@ public class InstrumentClassifierMethods{
         switch(gradeCode){
             case '1':
             case '2': grade = "Beginner";
-            break;
+                break;
             case '3': grade = "Step-up";
-            break;
+                break;
             case '4':
             case '5': grade = "Intermediate";
-            break;
+                break;
             case '6':
             case '7': grade = "Professional";
-            break;
+                break;
             case '8':
             case '9': grade = "Artist/Custom";
-            break;
+                break;
             default: grade = "unknown";
         }
         return grade;
